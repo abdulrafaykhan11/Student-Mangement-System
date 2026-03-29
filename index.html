@@ -4,37 +4,195 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form>
-        <h1>Student Management System</h1>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name"><br><br>
+    <div class="page-shell">
+        <header class="topbar">
+            <div class="brand-block">
+                <div class="brand-mark">SM</div>
+                <div>
+                    <p class="eyebrow">Academic Operations Suite</p>
+                    <h1>Student Management System</h1>
+                </div>
+            </div>
+            <div class="topbar-meta">
+                <div class="meta-chip">
+                    <span class="dot dot-live"></span>
+                    Campus data synced
+                </div>
+                <div class="meta-date" id="todayLabel">Loading date...</div>
+            </div>
+        </header>
 
-        <label for="age">Age:</label>
-        <input type="number" id="age" name="age"><br><br>
+        <main class="dashboard">
+            <section class="panel hero-panel">
+                <div class="hero-copy">
+                    <p class="eyebrow">Central Student Desk</p>
+                    <h2>Admissions, attendance, performance and records in one premium workspace.</h2>
+                    <p class="hero-text">
+                        Track high-performing students, monitor active departments, and register new profiles from a single polished dashboard built for real academic administration.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="#studentForm" class="primary-btn">Register Student</a>
+                        <a href="#recordsSection" class="ghost-btn">View Records</a>
+                    </div>
+                </div>
 
-        <label for="grade">Grade:</label>
-        <input type="text" id="grade" name="grade"><br><br>
+                <div class="hero-monitor">
+                    <div class="monitor-card">
+                        <span>Total Students</span>
+                        <strong id="totalStudents">0</strong>
+                        <small>Across all active programs</small>
+                    </div>
+                    <div class="monitor-card">
+                        <span>Departments</span>
+                        <strong id="activePrograms">0</strong>
+                        <small>Academic units currently running</small>
+                    </div>
+                    <div class="monitor-card">
+                        <span>Average CGPA</span>
+                        <strong id="averageCgpa">0.00</strong>
+                        <small>Updated from XML roster</small>
+                    </div>
+                    <div class="monitor-card accent-card">
+                        <span>Average Attendance</span>
+                        <strong id="averageAttendance">0%</strong>
+                        <small>Attendance discipline snapshot</small>
+                    </div>
+                </div>
+            </section>
 
-        <label for="field">Field:</label>
-        <input type="text" id="field" name="field"><br><br>
+            <section class="content-grid">
+                <section class="panel form-panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Admissions Desk</p>
+                            <h3>Register a New Student</h3>
+                        </div>
+                        <span class="head-chip">Real-time preview</span>
+                    </div>
 
-        <button type="submit">Add Student</button>
-    </form>
+                    <form id="studentForm" class="student-form">
+                        <label>
+                            <span>Student Name</span>
+                            <input type="text" id="name" name="name" placeholder="Enter full name" required>
+                        </label>
 
-    <table>
-        <thead>
-            <tr>
-                <th>Name</th>
-                <th>Age</th>
-                <th>Grade</th>
-                <th>Field</th>
-            </tr>
-        </thead>
-        <tbody id="studentTableBody">
-            <!-- Student records will be added here -->
-        </tbody>
-    </table>
+                        <label>
+                            <span>Age</span>
+                            <input type="number" id="age" name="age" min="14" max="30" placeholder="18" required>
+                        </label>
+
+                        <label>
+                            <span>Class / Semester</span>
+                            <input type="text" id="classLevel" name="classLevel" placeholder="Second Year" required>
+                        </label>
+
+                        <label>
+                            <span>Department</span>
+                            <input type="text" id="department" name="department" placeholder="Computer Science" required>
+                        </label>
+
+                        <label>
+                            <span>CGPA</span>
+                            <input type="number" id="cgpa" name="cgpa" min="0" max="4" step="0.01" placeholder="3.54" required>
+                        </label>
+
+                        <label>
+                            <span>Status</span>
+                            <select id="status" name="status" required>
+                                <option value="Active">Active</option>
+                                <option value="Scholarship">Scholarship</option>
+                                <option value="Probation">Probation</option>
+                            </select>
+                        </label>
+
+                        <button type="submit" class="primary-btn submit-btn">Add Student Record</button>
+                    </form>
+                </section>
+
+                <section class="panel insights-panel">
+                    <div class="section-head">
+                        <div>
+                            <p class="eyebrow">Performance Pulse</p>
+                            <h3>System Insights</h3>
+                        </div>
+                        <span class="head-chip">Auto-generated</span>
+                    </div>
+
+                    <div class="insight-stack">
+                        <article class="insight-card">
+                            <span>Top Department</span>
+                            <strong id="topDepartment">-</strong>
+                            <small>Most students enrolled right now</small>
+                        </article>
+                        <article class="insight-card">
+                            <span>Scholarship Students</span>
+                            <strong id="scholarshipCount">0</strong>
+                            <small>High performing profiles</small>
+                        </article>
+                        <article class="insight-card">
+                            <span>Probation Alerts</span>
+                            <strong id="probationCount">0</strong>
+                            <small>Students requiring follow-up</small>
+                        </article>
+                        <article class="insight-card spotlight">
+                            <span>Top Performer</span>
+                            <strong id="topPerformer">-</strong>
+                            <small id="topPerformerMeta">Waiting for records</small>
+                        </article>
+                    </div>
+                </section>
+            </section>
+
+            <section class="panel records-panel" id="recordsSection">
+                <div class="records-toolbar">
+                    <div>
+                        <p class="eyebrow">Master Roster</p>
+                        <h3>Student Records</h3>
+                    </div>
+
+                    <div class="toolbar-controls">
+                        <input type="search" id="searchInput" placeholder="Search by name, ID or department">
+                        <select id="statusFilter">
+                            <option value="All">All Status</option>
+                            <option value="Active">Active</option>
+                            <option value="Scholarship">Scholarship</option>
+                            <option value="Probation">Probation</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Class</th>
+                                <th>Department</th>
+                                <th>Email</th>
+                                <th>CGPA</th>
+                                <th>Attendance</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody id="studentTableBody">
+                            <tr>
+                                <td colspan="9" class="empty-state">Loading student records...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

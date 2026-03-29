@@ -1,37 +1,178 @@
-<Students>
+<students>
     <student>
+        <studentId>SMS-2401</studentId>
         <name>Abdul Rafay</name>
         <age>17</age>
-        <class>11</class>
-        <field>Computer Science</field>
+        <classLevel>First Year</classLevel>
+        <department>Computer Science</department>
+        <email>abdul.rafay@aptech.edu.pk</email>
+        <attendance>96</attendance>
+        <cgpa>3.88</cgpa>
+        <status>Scholarship</status>
     </student>
     <student>
-        <name>Daniyal</name>
-        <class>11</class>
-        <field>Computer Science</field>
+        <studentId>SMS-2402</studentId>
+        <name>Daniyal Ahmed</name>
+        <age>17</age>
+        <classLevel>First Year</classLevel>
+        <department>Computer Science</department>
+        <email>daniyal.ahmed@aptech.edu.pk</email>
+        <attendance>91</attendance>
+        <cgpa>3.42</cgpa>
+        <status>Active</status>
     </student>
     <student>
-        <name>Zubair</name>
+        <studentId>SMS-2403</studentId>
+        <name>Zubair Khan</name>
         <age>16</age>
-        <class>10</class>
-        <field>Mathematics</field>
+        <classLevel>Tenth Grade</classLevel>
+        <department>Mathematics</department>
+        <email>zubair.khan@aptech.edu.pk</email>
+        <attendance>89</attendance>
+        <cgpa>3.31</cgpa>
+        <status>Active</status>
     </student>
     <student>
-        <name>Ayesha</name>
+        <studentId>SMS-2404</studentId>
+        <name>Ayesha Noor</name>
         <age>18</age>
-        <class>12</class>
-        <field>Physics</field>
+        <classLevel>Second Year</classLevel>
+        <department>Physics</department>
+        <email>ayesha.noor@aptech.edu.pk</email>
+        <attendance>95</attendance>
+        <cgpa>3.91</cgpa>
+        <status>Scholarship</status>
     </student>
     <student>
-        <name>Waniya</name>
+        <studentId>SMS-2405</studentId>
+        <name>Waniya Fatima</name>
         <age>18</age>
-        <class>12</class>
-        <field>Chemistry</field>
+        <classLevel>Second Year</classLevel>
+        <department>Chemistry</department>
+        <email>waniya.fatima@aptech.edu.pk</email>
+        <attendance>93</attendance>
+        <cgpa>3.67</cgpa>
+        <status>Active</status>
     </student>
     <student>
-        <name>Arham</name>
+        <studentId>SMS-2406</studentId>
+        <name>Arham Saeed</name>
         <age>15</age>
-        <class>9</class>
-        <field>Mathematics</field>
+        <classLevel>Ninth Grade</classLevel>
+        <department>Mathematics</department>
+        <email>arham.saeed@aptech.edu.pk</email>
+        <attendance>82</attendance>
+        <cgpa>2.74</cgpa>
+        <status>Probation</status>
     </student>
-</Students>
+    <student>
+        <studentId>SMS-2407</studentId>
+        <name>Hira Usman</name>
+        <age>19</age>
+        <classLevel>Fourth Semester</classLevel>
+        <department>Software Engineering</department>
+        <email>hira.usman@aptech.edu.pk</email>
+        <attendance>97</attendance>
+        <cgpa>3.95</cgpa>
+        <status>Scholarship</status>
+    </student>
+    <student>
+        <studentId>SMS-2408</studentId>
+        <name>Talha Siddiqui</name>
+        <age>20</age>
+        <classLevel>Fourth Semester</classLevel>
+        <department>Software Engineering</department>
+        <email>talha.siddiqui@aptech.edu.pk</email>
+        <attendance>90</attendance>
+        <cgpa>3.58</cgpa>
+        <status>Active</status>
+    </student>
+    <student>
+        <studentId>SMS-2409</studentId>
+        <name>Mahnoor Ali</name>
+        <age>18</age>
+        <classLevel>Third Semester</classLevel>
+        <department>Business Analytics</department>
+        <email>mahnoor.ali@aptech.edu.pk</email>
+        <attendance>92</attendance>
+        <cgpa>3.72</cgpa>
+        <status>Active</status>
+    </student>
+    <student>
+        <studentId>SMS-2410</studentId>
+        <name>Hamza Farooq</name>
+        <age>19</age>
+        <classLevel>Third Semester</classLevel>
+        <department>Cyber Security</department>
+        <email>hamza.farooq@aptech.edu.pk</email>
+        <attendance>87</attendance>
+        <cgpa>3.14</cgpa>
+        <status>Active</status>
+    </student>
+    <student>
+        <studentId>SMS-2411</studentId>
+        <name>Iqra Rehman</name>
+        <age>18</age>
+        <classLevel>Second Semester</classLevel>
+        <department>Artificial Intelligence</department>
+        <email>iqra.rehman@aptech.edu.pk</email>
+        <attendance>98</attendance>
+        <cgpa>3.97</cgpa>
+        <status>Scholarship</status>
+    </student>
+    <student>
+        <studentId>SMS-2412</studentId>
+        <name>Huzaifa Malik</name>
+        <age>20</age>
+        <classLevel>Sixth Semester</classLevel>
+        <department>Computer Science</department>
+        <email>huzaifa.malik@aptech.edu.pk</email>
+        <attendance>84</attendance>
+        <cgpa>2.86</cgpa>
+        <status>Probation</status>
+    </student>
+    <student>
+        <studentId>SMS-2413</studentId>
+        <name>Laiba Tariq</name>
+        <age>17</age>
+        <classLevel>First Year</classLevel>
+        <department>Pre-Engineering</department>
+        <email>laiba.tariq@aptech.edu.pk</email>
+        <attendance>94</attendance>
+        <cgpa>3.76</cgpa>
+        <status>Active</status>
+    </student>
+    <student>
+        <studentId>SMS-2414</studentId>
+        <name>Sameer Abbas</name>
+        <age>19</age>
+        <classLevel>Fourth Semester</classLevel>
+        <department>Data Science</department>
+        <email>sameer.abbas@aptech.edu.pk</email>
+        <attendance>88</attendance>
+        <cgpa>3.28</cgpa>
+        <status>Active</status>
+    </student>
+    <student>
+        <studentId>SMS-2415</studentId>
+        <name>Fatima Zahra</name>
+        <age>18</age>
+        <classLevel>Third Semester</classLevel>
+        <department>Artificial Intelligence</department>
+        <email>fatima.zahra@aptech.edu.pk</email>
+        <attendance>96</attendance>
+        <cgpa>3.89</cgpa>
+        <status>Scholarship</status>
+    </student>
+    <student>
+        <studentId>SMS-2416</studentId>
+        <name>Bilal Hassan</name>
+        <age>21</age>
+        <classLevel>Final Year</classLevel>
+        <department>Information Technology</department>
+        <email>bilal.hassan@aptech.edu.pk</email>
+        <attendance>80</attendance>
+        <cgpa>2.68</cgpa>
+        <status>Probation</status>
+    </student>
+</students>
