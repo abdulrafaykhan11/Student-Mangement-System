@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+</head>
+<body>
+    <form>
+        <h1>Student Management System</h1>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="age"><br><br>
+
+        <label for="grade">Grade:</label>
+        <input type="text" id="grade" name="grade"><br><br>
+
+        <label for="field">Field:</label>
+        <input type="text" id="field" name="field"><br><br>
+
+        <button type="submit">Add Student</button>
+    </form>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Grade</th>
+                <th>Field</th>
+            </tr>
+        </thead>
+        <tbody id="studentTableBody">
+            <!-- Student records will be added here -->
+        </tbody>
+    </table>
+</body>
+</html>
