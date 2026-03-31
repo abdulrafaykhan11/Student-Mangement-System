@@ -1,6 +1,7 @@
 let tableBody = document.getElementById("studentTableBody");
 let today = document.getElementById("todayLabel")
-today.innerHTML = `${Date()}`
+let date = new Date()
+today.innerHTML = date.toDateString("en-PK")
 let avg = document.getElementById("averageCgpa")
 let totalStudents = document.getElementById("totalStudents")
 let activePrograms = document.getElementById("activePrograms")
@@ -93,3 +94,47 @@ fetch("student.xml")
             activePrograms.textContent = num.length
         })
     });
+
+
+let studentForm = document.getElementById("studentForm");
+
+studentForm.addEventListener("submit", function(e) {
+    e.preventDefault();  // Form submit na ho
+    
+    let name = document.getElementById("name").value.trim();
+    let age = Number(document.getElementById("age").value);
+    let classLevel = document.getElementById("classLevel").value.trim();
+    let department = document.getElementById("department").value.trim();
+    let cgpa = Number(document.getElementById("cgpa").value);
+    let status = document.getElementById("status").value;
+    
+    // VALIDATION
+    if(name === "") {
+        alert("Name required!");
+        return;
+    }
+    if(age < 14 || age > 30) {
+        alert("Age 14-30 ke beech hona chahiye!");
+        return;
+    }
+    if(classLevel === "") {
+        alert("Class/Semester required!");
+        return;
+    }
+    if(department === "") {
+        alert("Department required!");
+        return;
+    }
+    if(cgpa < 0 || cgpa > 4) {
+        alert("CGPA 0-4 ke beech hona chahiye!");
+        return;
+    }
+    if(status === "") {
+        alert("Status select karo!");
+        return;
+    }
+    
+    // Sab valid hai - ab tu apna code likha
+    console.log("Form valid hai!");
+    studentForm.reset()
+});
