@@ -511,6 +511,27 @@ tbody tr:hover .delete-btn {
         width: 100%;
         align-items: flex-start;
     }
+
+    .section-head {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-copy h2 {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 860px) {
+    .student-form,
+    .hero-monitor {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbar-controls {
+        flex-direction: column;
+        width: 100%;
+    }
 }
 
 @media (max-width: 720px) {
@@ -525,18 +546,178 @@ tbody tr:hover .delete-btn {
         border-radius: 22px;
     }
 
-    .student-form,
-    .hero-monitor,
-    .toolbar-controls {
-        grid-template-columns: 1fr;
+    .topbar {
+        gap: 16px;
+    }
+
+    .brand-block {
         flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+    }
+
+    .brand-mark {
+        width: 56px;
+        height: 56px;
+        border-radius: 18px;
     }
 
     .hero-copy h2 {
         max-width: 100%;
+        font-size: clamp(1.6rem, 8vw, 2.4rem);
     }
 
-    .brand-block {
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions a,
+    .submit-btn {
+        width: 100%;
+    }
+
+    .topbar-meta {
+        gap: 12px;
         align-items: flex-start;
+    }
+
+    .meta-chip,
+    .meta-date,
+    .head-chip {
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .monitor-card,
+    .insight-card {
+        padding: 18px;
+    }
+
+    .records-panel {
+        padding: 18px;
+    }
+
+    .table-wrap {
+        overflow: visible;
+        border: none;
+        background: transparent;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    table {
+        background: transparent;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tbody {
+        display: grid;
+        gap: 14px;
+    }
+
+    tbody tr {
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 8px 0;
+    }
+
+    tbody td {
+        border-top: none;
+        padding: 10px 16px;
+        display: grid;
+        grid-template-columns: minmax(88px, 108px) minmax(0, 1fr);
+        gap: 12px;
+        align-items: start;
+    }
+
+    tbody td::before {
+        content: attr(data-label);
+        color: var(--muted);
+        font-size: 0.78rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    tbody td:first-child {
+        padding-top: 16px;
+    }
+
+    tbody td:last-child {
+        padding-bottom: 16px;
+    }
+
+    .actions-cell {
+        width: 100%;
+        text-align: left;
+    }
+
+    .delete-btn,
+    tbody tr:hover .delete-btn {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .empty-state {
+        display: block;
+        text-align: center;
+        padding: 26px 18px;
+    }
+
+    .empty-state::before {
+        content: none;
+    }
+}
+
+@media (max-width: 520px) {
+    body::before,
+    body::after {
+        display: none;
+    }
+
+    .page-shell {
+        width: calc(100% - 16px);
+        margin: 12px auto;
+    }
+
+    .panel,
+    .topbar,
+    .records-panel {
+        padding: 16px;
+        border-radius: 18px;
+    }
+
+    .eyebrow {
+        letter-spacing: 0.14em;
+        font-size: 0.66rem;
+    }
+
+    .hero-text {
+        line-height: 1.6;
+    }
+
+    tbody td {
+        grid-template-columns: 1fr;
+        gap: 6px;
+    }
+
+    tbody td::before {
+        font-size: 0.72rem;
+    }
+
+    .status-pill {
+        min-width: 0;
+        width: fit-content;
     }
 }

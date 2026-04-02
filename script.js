@@ -75,16 +75,21 @@ function renderTable() {
 
     let rows = studentsData.map((student) => `
         <tr>
-            <td>${student.studentId}</td>
-            <td>${student.name}</td>
-            <td>${student.age}</td>
-            <td>${student.classLevel}</td>
-            <td>${student.department}</td>
-            <td>${student.email}</td>
-            <td>${student.cgpa.toFixed(2)}</td>
-            <td>${student.attendance}</td>
-            <td><span class="status-pill ${getStatusClass(student.status)}">${student.status}</span></td>
-            <td class="actions-cell">
+            <td data-label="ID">${student.studentId}</td>
+            <td data-label="Name">
+                <div class="student-name">
+                    <strong>${student.name}</strong>
+                    <small>${student.email}</small>
+                </div>
+            </td>
+            <td data-label="Age">${student.age}</td>
+            <td data-label="Class">${student.classLevel}</td>
+            <td data-label="Department">${student.department}</td>
+            <td data-label="Email">${student.email}</td>
+            <td data-label="CGPA">${student.cgpa.toFixed(2)}</td>
+            <td data-label="Attendance">${student.attendance}%</td>
+            <td data-label="Status"><span class="status-pill ${getStatusClass(student.status)}">${student.status}</span></td>
+            <td class="actions-cell" data-label="Actions">
                 <button class="delete-btn" onclick="deleteStudent('${student.studentId}')">Delete</button>
             </td>
         </tr>
