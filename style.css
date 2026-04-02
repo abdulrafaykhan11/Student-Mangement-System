@@ -28,6 +28,7 @@ html {
 
 body {
     min-height: 100vh;
+    overflow-x: hidden;
     font-family: "Manrope", "Segoe UI", sans-serif;
     color: var(--text);
     background:
@@ -379,24 +380,27 @@ body::after {
 table {
     width: 100%;
     border-collapse: collapse;
-    min-width: 840px;
+    table-layout: fixed;
     background: rgba(255, 255, 255, 0.02);
 }
 
 thead th {
     text-align: left;
-    padding: 18px 20px;
+    padding: 18px 16px;
     color: #d2e6f6;
     font-size: 0.82rem;
     text-transform: uppercase;
     letter-spacing: 0.12em;
     background: rgba(255, 255, 255, 0.04);
+    white-space: nowrap;
 }
 
 tbody td {
-    padding: 18px 20px;
+    padding: 18px 16px;
     border-top: 1px solid rgba(255, 255, 255, 0.06);
     color: #d9e7f2;
+    vertical-align: middle;
+    word-break: break-word;
 }
 
 tbody tr {
@@ -449,6 +453,39 @@ tbody tr:hover {
     color: #ffe0dd;
     background: rgba(255, 123, 114, 0.14);
     border: 1px solid rgba(255, 123, 114, 0.22);
+}
+
+.actions-cell {
+    width: 96px;
+    text-align: center;
+}
+
+.delete-btn {
+    border: 1px solid rgba(255, 123, 114, 0.28);
+    border-radius: 12px;
+    padding: 10px 14px;
+    background: rgba(255, 123, 114, 0.12);
+    color: #ffe6e3;
+    font: inherit;
+    font-size: 0.84rem;
+    font-weight: 700;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
+}
+
+tbody tr:hover .delete-btn {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.delete-btn:hover {
+    transform: translateY(-1px);
+    background: rgba(255, 123, 114, 0.2);
+    border-color: rgba(255, 123, 114, 0.4);
 }
 
 .empty-state {

@@ -68,7 +68,7 @@ function renderTable() {
     if (!studentsData.length) {
         tableBody.innerHTML = `
             <tr>
-                <td colspan="9" class="empty-state">No student records found.</td>
+                <td colspan="10" class="empty-state">No student records found.</td>
             </tr>`;
         return;
     }
@@ -84,10 +84,24 @@ function renderTable() {
             <td>${student.cgpa.toFixed(2)}</td>
             <td>${student.attendance}</td>
             <td><span class="status-pill ${getStatusClass(student.status)}">${student.status}</span></td>
+            <td class="actions-cell">
+                <button class="delete-btn" onclick="deleteStudent('${student.studentId}')">Delete</button>
+            </td>
         </tr>
     `).join("");
 
     tableBody.innerHTML = rows;
+}
+
+function deleteStudent(studentId) {
+    studentsData = studentsData.filter((student) => student.studentId !== studentId);
+
+    let savedStudents = JSON.parse(localStorage.getItem("students")) || [];
+    let updatedSavedStudents = savedStudents.filter((student) => student.studentId !== studentId);
+
+    localStorage.setItem("students", JSON.stringify(updatedSavedStudents));
+
+    renderAll();
 }
 
 function renderAll() {
@@ -114,18 +128,15 @@ fetch("student.xml")
             status: student.getElementsByTagName("status")[0].textContent
         }));
 
-        let localStudents = studentsData.filter((localStudent) => {
-            return !loadedStudents.some((loadedStudent) => loadedStudent.studentId === localStudent.studentId);
-        });
-
-        studentsData = [...loadedStudents, ...localStudents];
+        let localStudent = JSON.parse(localStorage.getItem("students")) || [];
+        studentsData = [...loadedStudents, ...localStudent];
 
         renderAll();
     })
     .catch(() => {
         tableBody.innerHTML = `
             <tr>
-                <td colspan="9" class="empty-state">Student records load nahi ho sake.</td>
+                <td colspan="10" class="empty-state">Student records load nahi ho sake.</td>
             </tr>`;
     });
 
@@ -167,7 +178,7 @@ studentForm.addEventListener("submit", function (e) {
     let studentId = "SMS-" + (2417 + studentsData.length);
     let emailHandle = name.toLowerCase().replace(/\s+/g, ".");
 
-    studentsData.push({
+    let newStudent = ({
         studentId: studentId,
         name: name,
         age: age,
@@ -178,6 +189,13 @@ studentForm.addEventListener("submit", function (e) {
         cgpa: cgpa,
         status: status
     });
+
+    studentsData.push(newStudent)
+
+  let savedStudent = JSON.parse(localStorage.getItem("students")) || []
+  savedStudent.push(newStudent)
+  localStorage.setItem("students" , JSON.stringify(savedStudent))
+
 
     renderAll();
     studentForm.reset();
